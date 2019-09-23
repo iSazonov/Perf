@@ -1,0 +1,963 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' /><head>
+<title>Pretty Output of DisassemblyDiagnoser for Test.LazyParameters.Benchmark_LazyParameters-20190923-100605</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+
+<style type='text/css'>
+    td.label:hover { cursor: pointer; background-color: yellow !important; }
+    td.highlighted { background-color: yellow !important; }
+</style></head><body>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script>$(document).ready(function () {
+    var selectedIndex = 0;
+
+    function highlight() {
+        $('td.reference.highlighted').removeClass('highlighted');
+
+        var selectedLabel = $(this).attr('data-label');
+        if (selectedLabel) {
+            $('td.reference[data-reference=' + selectedLabel + ']').addClass('highlighted');
+        }
+        selectedIndex = 0;
+    }
+
+    function selectNext() {
+        var $highlighted = $('td.reference.highlighted');
+        var selected = $highlighted[selectedIndex++ % $highlighted.length];
+
+        if (selected) {
+            var selectedReference = $(selected).attr('id');
+            if (selectedReference) {
+                window.location.hash = '#' + selectedReference;
+            }
+        }
+    }
+
+    $('td.label').on('click', highlight);
+
+    $(document).on('keydown', function (event) {
+        if (event.keyCode == 114) { // F3
+            event.preventDefault();
+            // Remap F3 to some other key that the browser doesn't care about
+            selectNext();
+        }
+    });
+});</script>
+<h2>.NET Core 3.0.0-rc1-19456-20 (CoreCLR 4.700.19.45506, CoreFX 4.700.19.45604), 64bit RyuJIT</h2>
+<table><tbody>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.TestParameters()</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>            return TestParametersSub(Date.ToString());
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08d84 48b9d0c3a4dcf77f0000 mov rcx,7FF7DCA4C3D0h"><pre><code>mov     rcx,7FF7DCA4C3D0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08d8e ba02000000      mov     edx,2"><pre><code>mov     edx,2</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08d93 e8d8098c5f      call    coreclr!coreclr_shutdown_2+0xddd0 (00007ff8`3c3c9770)"><pre><code>call    coreclr!coreclr_shutdown_2+0xddd0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08d98 48b92073fd5e0f020000 mov rcx,20F5EFD7320h"><pre><code>mov     rcx,20F5EFD7320h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08da2 488b09          mov     rcx,qword ptr [rcx]"><pre><code>mov     rcx,qword ptr [rcx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08da5 4883c108        add     rcx,8"><pre><code>add     rcx,8</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08da9 e8aa4addff      call    00007ff7`dc8dd858"><pre><code>call    System.DateTime.ToString()</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08dae 488945f8        mov     qword ptr [rbp-8],rax"><pre><code>mov     qword ptr [rbp-8],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08db2 488b55f8        mov     rdx,qword ptr [rbp-8]"><pre><code>mov     rdx,qword ptr [rbp-8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08db6 488b4d10        mov     rcx,qword ptr [rbp+10h]"><pre><code>mov     rcx,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08dba e8994cddff      call    00007ff7`dc8dda58"><pre><code>call    Test.LazyParameters.Benchmark_LazyParameters.TestParametersSub(System.String)</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.DateTime.ToString()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff8`3b47c8c5 488b09          mov     rcx,qword ptr [rcx]"><pre><code>mov     rcx,qword ptr [rcx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b47c8c8 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b47c8ca 4533c0          xor     r8d,r8d"><pre><code>xor     r8d,r8d</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b47c8cd ff158d4bbcff    call    qword ptr [System_Private_CoreLib+0x11460 (00007ff8`3b041460)]"><pre><code>call    qword ptr [System_Private_CoreLib+0x11460</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.TestParametersSub(System.String)</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>             if (Condition)
+             ^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09b92 488b4d10        mov     rcx,qword ptr [rbp+10h]"><pre><code>mov     rcx,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09b96 e8a53eddff      call    00007ff7`dc8dda40"><pre><code>call    Test.LazyParameters.Benchmark_LazyParameters.get_Condition()</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09b9b 85c0            test    eax,eax"><pre><code>test    eax,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td id="3" class="reference" data-reference="3_M02_L00" title="00007ff7`dcb09b9d 740a            je      00007ff7`dcb09ba9"><a href="#3_M02_L00"><pre><code>je      M02_L00</pre></code></a></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return date;
+                ^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09b9f 488b4518        mov     rax,qword ptr [rbp+18h]"><pre><code>mov     rax,qword ptr [rbp+18h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09ba3 488d6500        lea     rsp,[rbp]"><pre><code>lea     rsp,[rbp]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09ba7 5d              pop     rbp"><pre><code>pop     rbp</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09ba8 c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return string.Empty;
+                ^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td id="3_M02_L00" class="label" data-label="3_M02_L00"><pre><code>M02_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff7`dcb09ba9 48b86030fd5e0f020000 mov rax,20F5EFD3060h"><pre><code>mov     rax,20F5EFD3060h</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff7`dcb09bb3 488b00          mov     rax,qword ptr [rax]"><pre><code>mov     rax,qword ptr [rax]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.DateTimeFormat.Format(System.DateTime, System.String, System.IFormatProvider)</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff8`3b415240 ff152ac8c1ff    call    qword ptr [System_Private_CoreLib+0x1a70 (00007ff8`3b031a70)]"><pre><code>call    qword ptr [System_Private_CoreLib+0x1a70</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b415246 4c8b8840020000  mov     r9,qword ptr [rax+240h]"><pre><code>mov     r9,qword ptr [rax+240h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b41524d 4d8b4908        mov     r9,qword ptr [r9+8]"><pre><code>mov     r9,qword ptr [r9+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b415251 488bd6          mov     rdx,rsi"><pre><code>mov     rdx,rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b415254 4c8bc7          mov     r8,rdi"><pre><code>mov     r8,rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b415257 488bcb          mov     rcx,rbx"><pre><code>mov     rcx,rbx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b41525a ff1508c2c2ff    call    qword ptr [System_Private_CoreLib+0x11468 (00007ff8`3b041468)]"><pre><code>call    qword ptr [System_Private_CoreLib+0x11468</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.get_Condition()</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>        public bool Condition { get; set; }
+                                ^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09bd8 488b4510        mov     rax,qword ptr [rbp+10h]"><pre><code>mov     rax,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09bdc 0fb64008        movzx   eax,byte ptr [rax+8]"><pre><code>movzx   eax,byte ptr [rax+8]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+</tbody></table>
+<h2>.NET Core 3.0.0-rc1-19456-20 (CoreCLR 4.700.19.45506, CoreFX 4.700.19.45604), 64bit RyuJIT</h2>
+<table><tbody>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.TestParametersLazyLambda()</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>            return TestParametersLambdaSub(() => Date.ToString());
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ab3 48b9d0c3a1dcf77f0000 mov rcx,7FF7DCA1C3D0h"><pre><code>mov     rcx,7FF7DCA1C3D0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8abd ba03000000      mov     edx,3"><pre><code>mov     edx,3</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ac2 e8a90c8f5f      call    coreclr!coreclr_shutdown_2+0xddd0 (00007ff8`3c3c9770)"><pre><code>call    coreclr!coreclr_shutdown_2+0xddd0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ac7 48b9307319389a010000 mov rcx,19A38197330h"><pre><code>mov     rcx,19A38197330h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ad1 488b09          mov     rcx,qword ptr [rcx]"><pre><code>mov     rcx,qword ptr [rcx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ad4 48894de8        mov     qword ptr [rbp-18h],rcx"><pre><code>mov     qword ptr [rbp-18h],rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ad8 488b4d10        mov     rcx,qword ptr [rbp+10h]"><pre><code>mov     rcx,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8adc 48894de0        mov     qword ptr [rbp-20h],rcx"><pre><code>mov     qword ptr [rbp-20h],rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ae0 488b4de8        mov     rcx,qword ptr [rbp-18h]"><pre><code>mov     rcx,qword ptr [rbp-18h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ae4 48894dd8        mov     qword ptr [rbp-28h],rcx"><pre><code>mov     qword ptr [rbp-28h],rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ae8 48837de800      cmp     qword ptr [rbp-18h],0"><pre><code>cmp     qword ptr [rbp-18h],0</pre></code></td>
+</tr><tr class="">
+<td></td><td id="6" class="reference" data-reference="6_M00_L00" title="00007ff7`dcad8aed 0f857e000000    jne     00007ff7`dcad8b71"><a href="#6_M00_L00"><pre><code>jne     M00_L00</pre></code></a></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8af3 48b910dbaadcf77f0000 mov rcx,7FF7DCAADB10h"><pre><code>mov     rcx,7FF7DCAADB10h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8afd e86e088f5f      call    coreclr!coreclr_shutdown_2+0xd9d0 (00007ff8`3c3c9370)"><pre><code>call    coreclr!coreclr_shutdown_2+0xd9d0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b02 488945d0        mov     qword ptr [rbp-30h],rax"><pre><code>mov     qword ptr [rbp-30h],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b06 48b9d0c3a1dcf77f0000 mov rcx,7FF7DCA1C3D0h"><pre><code>mov     rcx,7FF7DCA1C3D0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b10 ba03000000      mov     edx,3"><pre><code>mov     edx,3</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b15 e8560c8f5f      call    coreclr!coreclr_shutdown_2+0xddd0 (00007ff8`3c3c9770)"><pre><code>call    coreclr!coreclr_shutdown_2+0xddd0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b1a 48ba287319389a010000 mov rdx,19A38197328h"><pre><code>mov     rdx,19A38197328h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b24 488b12          mov     rdx,qword ptr [rdx]"><pre><code>mov     rdx,qword ptr [rdx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b27 488955c8        mov     qword ptr [rbp-38h],rdx"><pre><code>mov     qword ptr [rbp-38h],rdx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b2b 488b55c8        mov     rdx,qword ptr [rbp-38h]"><pre><code>mov     rdx,qword ptr [rbp-38h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b2f 49b8d076addcf77f0000 mov r8,7FF7DCAD76D0h"><pre><code>mov     r8,7FF7DCAD76D0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b39 488b4dd0        mov     rcx,qword ptr [rbp-30h]"><pre><code>mov     rcx,qword ptr [rbp-30h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b3d e806b4dbff      call    00007ff7`dc893f48"><pre><code>call    System.MulticastDelegate.CtorClosed(System.Object, IntPtr)</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b42 48b9d0c3a1dcf77f0000 mov rcx,7FF7DCA1C3D0h"><pre><code>mov     rcx,7FF7DCA1C3D0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b4c ba03000000      mov     edx,3"><pre><code>mov     edx,3</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b51 e81a0c8f5f      call    coreclr!coreclr_shutdown_2+0xddd0 (00007ff8`3c3c9770)"><pre><code>call    coreclr!coreclr_shutdown_2+0xddd0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b56 48b9307319389a010000 mov rcx,19A38197330h"><pre><code>mov     rcx,19A38197330h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b60 488b55d0        mov     rdx,qword ptr [rbp-30h]"><pre><code>mov     rdx,qword ptr [rbp-30h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b64 e817f98e5f      call    coreclr!coreclr_shutdown_2+0xcae0 (00007ff8`3c3c8480)"><pre><code>call    coreclr!coreclr_shutdown_2+0xcae0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b69 488b4dd0        mov     rcx,qword ptr [rbp-30h]"><pre><code>mov     rcx,qword ptr [rbp-30h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8b6d 48894dd8        mov     qword ptr [rbp-28h],rcx"><pre><code>mov     qword ptr [rbp-28h],rcx</pre></code></td>
+</tr><tr class="evenMap">
+<td id="6_M00_L00" class="label" data-label="6_M00_L00"><pre><code>M00_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff7`dcad8b71 488b4de0        mov     rcx,qword ptr [rbp-20h]"><pre><code>mov     rcx,qword ptr [rbp-20h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff7`dcad8b75 488b55d8        mov     rdx,qword ptr [rbp-28h]"><pre><code>mov     rdx,qword ptr [rbp-28h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff7`dcad8b79 e8ea4eddff      call    00007ff7`dc8ada68"><pre><code>call    Test.LazyParameters.Benchmark_LazyParameters.TestParametersLambdaSub(System.Func`1<System.String>)</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.MulticastDelegate.CtorClosed(System.Object, IntPtr)</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff8`3b3d4aac 4885d2          test    rdx,rdx"><pre><code>test    rdx,rdx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4aaf 7415            je      System_Private_CoreLib+0x3a4ac6 (00007ff8`3b3d4ac6)"><pre><code>je      System_Private_CoreLib+0x3a4ac6</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ab1 488d4e08        lea     rcx,[rsi+8]"><pre><code>lea     rcx,[rsi+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ab5 ff156dc5c5ff    call    qword ptr [System_Private_CoreLib+0x1028 (00007ff8`3b031028)]"><pre><code>call    qword ptr [System_Private_CoreLib+0x1028</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4abb 48897e18        mov     qword ptr [rsi+18h],rdi"><pre><code>mov     qword ptr [rsi+18h],rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4abf 4883c428        add     rsp,28h"><pre><code>add     rsp,28h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac3 5e              pop     rsi"><pre><code>pop     rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac4 5f              pop     rdi"><pre><code>pop     rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac5 c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac6 488bce          mov     rcx,rsi"><pre><code>mov     rcx,rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac9 ff1599a7c6ff    call    qword ptr [System_Private_CoreLib+0xf268 (00007ff8`3b03f268)]"><pre><code>call    qword ptr [System_Private_CoreLib+0xf268</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4acf cc              int     3"><pre><code>int     3</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad0 57              push    rdi"><pre><code>push    rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad1 56              push    rsi"><pre><code>push    rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad2 53              push    rbx"><pre><code>push    rbx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad3 4883ec30        sub     rsp,30h"><pre><code>sub     rsp,30h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad7 488bf1          mov     rsi,rcx"><pre><code>mov     rsi,rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ada 488bfa          mov     rdi,rdx"><pre><code>mov     rdi,rdx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4add 498bd8          mov     rbx,r8"><pre><code>mov     rbx,r8</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ae0 488b5708        mov     rdx,qword ptr [rdi+8]"><pre><code>mov     rdx,qword ptr [rdi+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ae4 488d4e20        lea     rcx,[rsi+20h]"><pre><code>lea     rcx,[rsi+20h]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.TestParametersLambdaSub(System.Func`1<System.String>)</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>            if (Condition)
+            ^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8c58 488b4d10        mov     rcx,qword ptr [rbp+10h]"><pre><code>mov     rcx,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8c5c e8df4dddff      call    00007ff7`dc8ada40"><pre><code>call    Test.LazyParameters.Benchmark_LazyParameters.get_Condition()</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8c61 85c0            test    eax,eax"><pre><code>test    eax,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td id="8" class="reference" data-reference="8_M02_L00" title="00007ff7`dcad8c63 741e            je      00007ff7`dcad8c83"><a href="#8_M02_L00"><pre><code>je      M02_L00</pre></code></a></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return date();
+                ^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8c65 488b4d18        mov     rcx,qword ptr [rbp+18h]"><pre><code>mov     rcx,qword ptr [rbp+18h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8c69 48894df8        mov     qword ptr [rbp-8],rcx"><pre><code>mov     qword ptr [rbp-8],rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8c6d 488b4df8        mov     rcx,qword ptr [rbp-8]"><pre><code>mov     rcx,qword ptr [rbp-8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8c71 488b4908        mov     rcx,qword ptr [rcx+8]"><pre><code>mov     rcx,qword ptr [rcx+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8c75 488b45f8        mov     rax,qword ptr [rbp-8]"><pre><code>mov     rax,qword ptr [rbp-8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8c79 ff5018          call    qword ptr [rax+18h]"><pre><code>call    qword ptr [rax+18h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8c7c 90              nop"><pre><code>nop</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8c7d 488d6500        lea     rsp,[rbp]"><pre><code>lea     rsp,[rbp]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8c81 5d              pop     rbp"><pre><code>pop     rbp</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8c82 c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return string.Empty;
+                ^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td id="8_M02_L00" class="label" data-label="8_M02_L00"><pre><code>M02_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff7`dcad8c83 48b8603019389a010000 mov rax,19A38193060h"><pre><code>mov     rax,19A38193060h</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff7`dcad8c8d 488b00          mov     rax,qword ptr [rax]"><pre><code>mov     rax,qword ptr [rax]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.get_Condition()</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>        public bool Condition { get; set; }
+                                ^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8cb8 488b4510        mov     rax,qword ptr [rbp+10h]"><pre><code>mov     rax,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8cbc 0fb64008        movzx   eax,byte ptr [rax+8]"><pre><code>movzx   eax,byte ptr [rax+8]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><td colspan="2"><b>Method got most probably inlined</b></td></tr>
+<tr><td colspan="2">Test.LazyParameters.Benchmark_LazyParameters+<>c.<TestParametersLazyLambda>b__7_0()</td></tr>
+<tr><td colspan="2">System.MulticastDelegate.ThrowNullThisInDelegateToInstance()</td></tr>
+<tr><td colspan="{2}"></td></tr>
+</tbody></table>
+<h2>.NET Core 3.0.0-rc1-19456-20 (CoreCLR 4.700.19.45506, CoreFX 4.700.19.45604), 64bit RyuJIT</h2>
+<table><tbody>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.TestParametersLazyLocalFunc()</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>            return TestParametersLazyLocalFuncSub(LocalFunc);
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08aa8 48b910dbaddcf77f0000 mov rcx,7FF7DCADDB10h"><pre><code>mov     rcx,7FF7DCADDB10h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08ab2 e8b9088c5f      call    coreclr!coreclr_shutdown_2+0xd9d0 (00007ff8`3c3c9370)"><pre><code>call    coreclr!coreclr_shutdown_2+0xd9d0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08ab7 488945f8        mov     qword ptr [rbp-8],rax"><pre><code>mov     qword ptr [rbp-8],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08abb 48b9d0c3a4dcf77f0000 mov rcx,7FF7DCA4C3D0h"><pre><code>mov     rcx,7FF7DCA4C3D0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08ac5 ba03000000      mov     edx,3"><pre><code>mov     edx,3</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08aca e8a10c8c5f      call    coreclr!coreclr_shutdown_2+0xddd0 (00007ff8`3c3c9770)"><pre><code>call    coreclr!coreclr_shutdown_2+0xddd0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08acf 48ba2873386aa7020000 mov rdx,2A76A387328h"><pre><code>mov     rdx,2A76A387328h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08ad9 488b12          mov     rdx,qword ptr [rdx]"><pre><code>mov     rdx,qword ptr [rdx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08adc 488955f0        mov     qword ptr [rbp-10h],rdx"><pre><code>mov     qword ptr [rbp-10h],rdx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08ae0 488b55f0        mov     rdx,qword ptr [rbp-10h]"><pre><code>mov     rdx,qword ptr [rbp-10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08ae4 49b8d876b0dcf77f0000 mov r8,7FF7DCB076D8h"><pre><code>mov     r8,7FF7DCB076D8h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08aee 488b4df8        mov     rcx,qword ptr [rbp-8]"><pre><code>mov     rcx,qword ptr [rbp-8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08af2 e851b4dbff      call    00007ff7`dc8c3f48"><pre><code>call    System.MulticastDelegate.CtorClosed(System.Object, IntPtr)</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08af7 488b4d10        mov     rcx,qword ptr [rbp+10h]"><pre><code>mov     rcx,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08afb 488b55f8        mov     rdx,qword ptr [rbp-8]"><pre><code>mov     rdx,qword ptr [rbp-8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08aff e8744fddff      call    00007ff7`dc8dda78"><pre><code>call    Test.LazyParameters.Benchmark_LazyParameters.TestParametersLazyLocalFuncSub(System.Func`1<System.String>)</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.MulticastDelegate.CtorClosed(System.Object, IntPtr)</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff8`3b3d4aac 4885d2          test    rdx,rdx"><pre><code>test    rdx,rdx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4aaf 7415            je      System_Private_CoreLib+0x3a4ac6 (00007ff8`3b3d4ac6)"><pre><code>je      System_Private_CoreLib+0x3a4ac6</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ab1 488d4e08        lea     rcx,[rsi+8]"><pre><code>lea     rcx,[rsi+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ab5 ff156dc5c5ff    call    qword ptr [System_Private_CoreLib+0x1028 (00007ff8`3b031028)]"><pre><code>call    qword ptr [System_Private_CoreLib+0x1028</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4abb 48897e18        mov     qword ptr [rsi+18h],rdi"><pre><code>mov     qword ptr [rsi+18h],rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4abf 4883c428        add     rsp,28h"><pre><code>add     rsp,28h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac3 5e              pop     rsi"><pre><code>pop     rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac4 5f              pop     rdi"><pre><code>pop     rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac5 c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac6 488bce          mov     rcx,rsi"><pre><code>mov     rcx,rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac9 ff1599a7c6ff    call    qword ptr [System_Private_CoreLib+0xf268 (00007ff8`3b03f268)]"><pre><code>call    qword ptr [System_Private_CoreLib+0xf268</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4acf cc              int     3"><pre><code>int     3</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad0 57              push    rdi"><pre><code>push    rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad1 56              push    rsi"><pre><code>push    rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad2 53              push    rbx"><pre><code>push    rbx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad3 4883ec30        sub     rsp,30h"><pre><code>sub     rsp,30h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad7 488bf1          mov     rsi,rcx"><pre><code>mov     rsi,rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ada 488bfa          mov     rdi,rdx"><pre><code>mov     rdi,rdx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4add 498bd8          mov     rbx,r8"><pre><code>mov     rbx,r8</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ae0 488b5708        mov     rdx,qword ptr [rdi+8]"><pre><code>mov     rdx,qword ptr [rdi+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ae4 488d4e20        lea     rcx,[rsi+20h]"><pre><code>lea     rcx,[rsi+20h]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.TestParametersLazyLocalFuncSub(System.Func`1<System.String>)</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>            if (Condition)
+            ^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08bd8 488b4d10        mov     rcx,qword ptr [rbp+10h]"><pre><code>mov     rcx,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08bdc e85f4eddff      call    00007ff7`dc8dda40"><pre><code>call    Test.LazyParameters.Benchmark_LazyParameters.get_Condition()</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08be1 85c0            test    eax,eax"><pre><code>test    eax,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td id="12" class="reference" data-reference="12_M02_L00" title="00007ff7`dcb08be3 741e            je      00007ff7`dcb08c03"><a href="#12_M02_L00"><pre><code>je      M02_L00</pre></code></a></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return date();
+                ^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08be5 488b4d18        mov     rcx,qword ptr [rbp+18h]"><pre><code>mov     rcx,qword ptr [rbp+18h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08be9 48894df8        mov     qword ptr [rbp-8],rcx"><pre><code>mov     qword ptr [rbp-8],rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08bed 488b4df8        mov     rcx,qword ptr [rbp-8]"><pre><code>mov     rcx,qword ptr [rbp-8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08bf1 488b4908        mov     rcx,qword ptr [rcx+8]"><pre><code>mov     rcx,qword ptr [rcx+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08bf5 488b45f8        mov     rax,qword ptr [rbp-8]"><pre><code>mov     rax,qword ptr [rbp-8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08bf9 ff5018          call    qword ptr [rax+18h]"><pre><code>call    qword ptr [rax+18h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08bfc 90              nop"><pre><code>nop</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08bfd 488d6500        lea     rsp,[rbp]"><pre><code>lea     rsp,[rbp]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08c01 5d              pop     rbp"><pre><code>pop     rbp</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08c02 c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return string.Empty;
+                ^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td id="12_M02_L00" class="label" data-label="12_M02_L00"><pre><code>M02_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff7`dcb08c03 48b86030386aa7020000 mov rax,2A76A383060h"><pre><code>mov     rax,2A76A383060h</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff7`dcb08c0d 488b00          mov     rax,qword ptr [rax]"><pre><code>mov     rax,qword ptr [rax]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.get_Condition()</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>        public bool Condition { get; set; }
+                                ^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08c38 488b4510        mov     rax,qword ptr [rbp+10h]"><pre><code>mov     rax,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08c3c 0fb64008        movzx   eax,byte ptr [rax+8]"><pre><code>movzx   eax,byte ptr [rax+8]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><td colspan="2"><b>Method got most probably inlined</b></td></tr>
+<tr><td colspan="2">Test.LazyParameters.Benchmark_LazyParameters+<>c.<TestParametersLazyLocalFunc>g__LocalFunc|9_0()</td></tr>
+<tr><td colspan="2">System.MulticastDelegate.ThrowNullThisInDelegateToInstance()</td></tr>
+<tr><td colspan="{2}"></td></tr>
+</tbody></table>
+<h2>.NET Core 3.0.0-rc1-19456-20 (CoreCLR 4.700.19.45506, CoreFX 4.700.19.45604), 64bit RyuJIT</h2>
+<table><tbody>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.TestParameters()</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>            return TestParametersSub(Date.ToString());
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08d84 48b9d0c3a4dcf77f0000 mov rcx,7FF7DCA4C3D0h"><pre><code>mov     rcx,7FF7DCA4C3D0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08d8e ba02000000      mov     edx,2"><pre><code>mov     edx,2</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08d93 e8d8098c5f      call    coreclr!coreclr_shutdown_2+0xddd0 (00007ff8`3c3c9770)"><pre><code>call    coreclr!coreclr_shutdown_2+0xddd0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08d98 48b9207398285b010000 mov rcx,15B28987320h"><pre><code>mov     rcx,15B28987320h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08da2 488b09          mov     rcx,qword ptr [rcx]"><pre><code>mov     rcx,qword ptr [rcx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08da5 4883c108        add     rcx,8"><pre><code>add     rcx,8</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08da9 e8aa4addff      call    00007ff7`dc8dd858"><pre><code>call    System.DateTime.ToString()</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08dae 488945f8        mov     qword ptr [rbp-8],rax"><pre><code>mov     qword ptr [rbp-8],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08db2 488b55f8        mov     rdx,qword ptr [rbp-8]"><pre><code>mov     rdx,qword ptr [rbp-8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08db6 488b4d10        mov     rcx,qword ptr [rbp+10h]"><pre><code>mov     rcx,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb08dba e8994cddff      call    00007ff7`dc8dda58"><pre><code>call    Test.LazyParameters.Benchmark_LazyParameters.TestParametersSub(System.String)</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.DateTime.ToString()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff8`3b47c8c5 488b09          mov     rcx,qword ptr [rcx]"><pre><code>mov     rcx,qword ptr [rcx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b47c8c8 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b47c8ca 4533c0          xor     r8d,r8d"><pre><code>xor     r8d,r8d</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b47c8cd ff158d4bbcff    call    qword ptr [System_Private_CoreLib+0x11460 (00007ff8`3b041460)]"><pre><code>call    qword ptr [System_Private_CoreLib+0x11460</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.TestParametersSub(System.String)</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>             if (Condition)
+             ^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09b92 488b4d10        mov     rcx,qword ptr [rbp+10h]"><pre><code>mov     rcx,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09b96 e8a53eddff      call    00007ff7`dc8dda40"><pre><code>call    Test.LazyParameters.Benchmark_LazyParameters.get_Condition()</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09b9b 85c0            test    eax,eax"><pre><code>test    eax,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td id="16" class="reference" data-reference="16_M02_L00" title="00007ff7`dcb09b9d 740a            je      00007ff7`dcb09ba9"><a href="#16_M02_L00"><pre><code>je      M02_L00</pre></code></a></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return date;
+                ^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09b9f 488b4518        mov     rax,qword ptr [rbp+18h]"><pre><code>mov     rax,qword ptr [rbp+18h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09ba3 488d6500        lea     rsp,[rbp]"><pre><code>lea     rsp,[rbp]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09ba7 5d              pop     rbp"><pre><code>pop     rbp</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09ba8 c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return string.Empty;
+                ^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td id="16_M02_L00" class="label" data-label="16_M02_L00"><pre><code>M02_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff7`dcb09ba9 48b8603098285b010000 mov rax,15B28983060h"><pre><code>mov     rax,15B28983060h</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff7`dcb09bb3 488b00          mov     rax,qword ptr [rax]"><pre><code>mov     rax,qword ptr [rax]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.DateTimeFormat.Format(System.DateTime, System.String, System.IFormatProvider)</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff8`3b415240 ff152ac8c1ff    call    qword ptr [System_Private_CoreLib+0x1a70 (00007ff8`3b031a70)]"><pre><code>call    qword ptr [System_Private_CoreLib+0x1a70</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b415246 4c8b8840020000  mov     r9,qword ptr [rax+240h]"><pre><code>mov     r9,qword ptr [rax+240h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b41524d 4d8b4908        mov     r9,qword ptr [r9+8]"><pre><code>mov     r9,qword ptr [r9+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b415251 488bd6          mov     rdx,rsi"><pre><code>mov     rdx,rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b415254 4c8bc7          mov     r8,rdi"><pre><code>mov     r8,rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b415257 488bcb          mov     rcx,rbx"><pre><code>mov     rcx,rbx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b41525a ff1508c2c2ff    call    qword ptr [System_Private_CoreLib+0x11468 (00007ff8`3b041468)]"><pre><code>call    qword ptr [System_Private_CoreLib+0x11468</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.get_Condition()</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>        public bool Condition { get; set; }
+                                ^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09bd8 488b4510        mov     rax,qword ptr [rbp+10h]"><pre><code>mov     rax,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcb09bdc 0fb64008        movzx   eax,byte ptr [rax+8]"><pre><code>movzx   eax,byte ptr [rax+8]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+</tbody></table>
+<h2>.NET Core 3.0.0-rc1-19456-20 (CoreCLR 4.700.19.45506, CoreFX 4.700.19.45604), 64bit RyuJIT</h2>
+<table><tbody>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.TestParametersLazyLambda()</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>            return TestParametersLambdaSub(() => Date.ToString());
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8d93 48b9d0c3a2dcf77f0000 mov rcx,7FF7DCA2C3D0h"><pre><code>mov     rcx,7FF7DCA2C3D0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8d9d ba03000000      mov     edx,3"><pre><code>mov     edx,3</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8da2 e8c9098e5f      call    coreclr!coreclr_shutdown_2+0xddd0 (00007ff8`3c3c9770)"><pre><code>call    coreclr!coreclr_shutdown_2+0xddd0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8da7 48b93073351408020000 mov rcx,20814357330h"><pre><code>mov     rcx,20814357330h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8db1 488b09          mov     rcx,qword ptr [rcx]"><pre><code>mov     rcx,qword ptr [rcx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8db4 48894de8        mov     qword ptr [rbp-18h],rcx"><pre><code>mov     qword ptr [rbp-18h],rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8db8 488b4d10        mov     rcx,qword ptr [rbp+10h]"><pre><code>mov     rcx,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8dbc 48894de0        mov     qword ptr [rbp-20h],rcx"><pre><code>mov     qword ptr [rbp-20h],rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8dc0 488b4de8        mov     rcx,qword ptr [rbp-18h]"><pre><code>mov     rcx,qword ptr [rbp-18h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8dc4 48894dd8        mov     qword ptr [rbp-28h],rcx"><pre><code>mov     qword ptr [rbp-28h],rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8dc8 48837de800      cmp     qword ptr [rbp-18h],0"><pre><code>cmp     qword ptr [rbp-18h],0</pre></code></td>
+</tr><tr class="">
+<td></td><td id="19" class="reference" data-reference="19_M00_L00" title="00007ff7`dcae8dcd 0f857e000000    jne     00007ff7`dcae8e51"><a href="#19_M00_L00"><pre><code>jne     M00_L00</pre></code></a></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8dd3 48b910dbabdcf77f0000 mov rcx,7FF7DCABDB10h"><pre><code>mov     rcx,7FF7DCABDB10h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8ddd e88e058e5f      call    coreclr!coreclr_shutdown_2+0xd9d0 (00007ff8`3c3c9370)"><pre><code>call    coreclr!coreclr_shutdown_2+0xd9d0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8de2 488945d0        mov     qword ptr [rbp-30h],rax"><pre><code>mov     qword ptr [rbp-30h],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8de6 48b9d0c3a2dcf77f0000 mov rcx,7FF7DCA2C3D0h"><pre><code>mov     rcx,7FF7DCA2C3D0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8df0 ba03000000      mov     edx,3"><pre><code>mov     edx,3</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8df5 e876098e5f      call    coreclr!coreclr_shutdown_2+0xddd0 (00007ff8`3c3c9770)"><pre><code>call    coreclr!coreclr_shutdown_2+0xddd0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8dfa 48ba2873351408020000 mov rdx,20814357328h"><pre><code>mov     rdx,20814357328h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8e04 488b12          mov     rdx,qword ptr [rdx]"><pre><code>mov     rdx,qword ptr [rdx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8e07 488955c8        mov     qword ptr [rbp-38h],rdx"><pre><code>mov     qword ptr [rbp-38h],rdx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8e0b 488b55c8        mov     rdx,qword ptr [rbp-38h]"><pre><code>mov     rdx,qword ptr [rbp-38h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8e0f 49b8d880aedcf77f0000 mov r8,7FF7DCAE80D8h"><pre><code>mov     r8,7FF7DCAE80D8h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8e19 488b4dd0        mov     rcx,qword ptr [rbp-30h]"><pre><code>mov     rcx,qword ptr [rbp-30h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8e1d e826b1dbff      call    00007ff7`dc8a3f48"><pre><code>call    System.MulticastDelegate.CtorClosed(System.Object, IntPtr)</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8e22 48b9d0c3a2dcf77f0000 mov rcx,7FF7DCA2C3D0h"><pre><code>mov     rcx,7FF7DCA2C3D0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8e2c ba03000000      mov     edx,3"><pre><code>mov     edx,3</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8e31 e83a098e5f      call    coreclr!coreclr_shutdown_2+0xddd0 (00007ff8`3c3c9770)"><pre><code>call    coreclr!coreclr_shutdown_2+0xddd0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8e36 48b93073351408020000 mov rcx,20814357330h"><pre><code>mov     rcx,20814357330h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8e40 488b55d0        mov     rdx,qword ptr [rbp-30h]"><pre><code>mov     rdx,qword ptr [rbp-30h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8e44 e837f68d5f      call    coreclr!coreclr_shutdown_2+0xcae0 (00007ff8`3c3c8480)"><pre><code>call    coreclr!coreclr_shutdown_2+0xcae0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8e49 488b4dd0        mov     rcx,qword ptr [rbp-30h]"><pre><code>mov     rcx,qword ptr [rbp-30h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8e4d 48894dd8        mov     qword ptr [rbp-28h],rcx"><pre><code>mov     qword ptr [rbp-28h],rcx</pre></code></td>
+</tr><tr class="evenMap">
+<td id="19_M00_L00" class="label" data-label="19_M00_L00"><pre><code>M00_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff7`dcae8e51 488b4de0        mov     rcx,qword ptr [rbp-20h]"><pre><code>mov     rcx,qword ptr [rbp-20h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff7`dcae8e55 488b55d8        mov     rdx,qword ptr [rbp-28h]"><pre><code>mov     rdx,qword ptr [rbp-28h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff7`dcae8e59 e80a4cddff      call    00007ff7`dc8bda68"><pre><code>call    Test.LazyParameters.Benchmark_LazyParameters.TestParametersLambdaSub(System.Func`1<System.String>)</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.MulticastDelegate.CtorClosed(System.Object, IntPtr)</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff8`3b3d4aac 4885d2          test    rdx,rdx"><pre><code>test    rdx,rdx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4aaf 7415            je      System_Private_CoreLib+0x3a4ac6 (00007ff8`3b3d4ac6)"><pre><code>je      System_Private_CoreLib+0x3a4ac6</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ab1 488d4e08        lea     rcx,[rsi+8]"><pre><code>lea     rcx,[rsi+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ab5 ff156dc5c5ff    call    qword ptr [System_Private_CoreLib+0x1028 (00007ff8`3b031028)]"><pre><code>call    qword ptr [System_Private_CoreLib+0x1028</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4abb 48897e18        mov     qword ptr [rsi+18h],rdi"><pre><code>mov     qword ptr [rsi+18h],rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4abf 4883c428        add     rsp,28h"><pre><code>add     rsp,28h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac3 5e              pop     rsi"><pre><code>pop     rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac4 5f              pop     rdi"><pre><code>pop     rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac5 c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac6 488bce          mov     rcx,rsi"><pre><code>mov     rcx,rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac9 ff1599a7c6ff    call    qword ptr [System_Private_CoreLib+0xf268 (00007ff8`3b03f268)]"><pre><code>call    qword ptr [System_Private_CoreLib+0xf268</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4acf cc              int     3"><pre><code>int     3</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad0 57              push    rdi"><pre><code>push    rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad1 56              push    rsi"><pre><code>push    rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad2 53              push    rbx"><pre><code>push    rbx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad3 4883ec30        sub     rsp,30h"><pre><code>sub     rsp,30h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad7 488bf1          mov     rsi,rcx"><pre><code>mov     rsi,rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ada 488bfa          mov     rdi,rdx"><pre><code>mov     rdi,rdx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4add 498bd8          mov     rbx,r8"><pre><code>mov     rbx,r8</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ae0 488b5708        mov     rdx,qword ptr [rdi+8]"><pre><code>mov     rdx,qword ptr [rdi+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ae4 488d4e20        lea     rcx,[rsi+20h]"><pre><code>lea     rcx,[rsi+20h]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.TestParametersLambdaSub(System.Func`1<System.String>)</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>            if (Condition)
+            ^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8f38 488b4d10        mov     rcx,qword ptr [rbp+10h]"><pre><code>mov     rcx,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8f3c e8ff4addff      call    00007ff7`dc8bda40"><pre><code>call    Test.LazyParameters.Benchmark_LazyParameters.get_Condition()</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8f41 85c0            test    eax,eax"><pre><code>test    eax,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td id="21" class="reference" data-reference="21_M02_L00" title="00007ff7`dcae8f43 741e            je      00007ff7`dcae8f63"><a href="#21_M02_L00"><pre><code>je      M02_L00</pre></code></a></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return date();
+                ^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8f45 488b4d18        mov     rcx,qword ptr [rbp+18h]"><pre><code>mov     rcx,qword ptr [rbp+18h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8f49 48894df8        mov     qword ptr [rbp-8],rcx"><pre><code>mov     qword ptr [rbp-8],rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8f4d 488b4df8        mov     rcx,qword ptr [rbp-8]"><pre><code>mov     rcx,qword ptr [rbp-8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8f51 488b4908        mov     rcx,qword ptr [rcx+8]"><pre><code>mov     rcx,qword ptr [rcx+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8f55 488b45f8        mov     rax,qword ptr [rbp-8]"><pre><code>mov     rax,qword ptr [rbp-8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8f59 ff5018          call    qword ptr [rax+18h]"><pre><code>call    qword ptr [rax+18h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8f5c 90              nop"><pre><code>nop</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8f5d 488d6500        lea     rsp,[rbp]"><pre><code>lea     rsp,[rbp]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8f61 5d              pop     rbp"><pre><code>pop     rbp</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8f62 c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return string.Empty;
+                ^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td id="21_M02_L00" class="label" data-label="21_M02_L00"><pre><code>M02_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff7`dcae8f63 48b86030351408020000 mov rax,20814353060h"><pre><code>mov     rax,20814353060h</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff7`dcae8f6d 488b00          mov     rax,qword ptr [rax]"><pre><code>mov     rax,qword ptr [rax]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters+<>c.<TestParametersLazyLambda>b__7_0()</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>            return TestParametersLambdaSub(() => Date.ToString());
+                                                 ^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8fce 48b9d0c3a2dcf77f0000 mov rcx,7FF7DCA2C3D0h"><pre><code>mov     rcx,7FF7DCA2C3D0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8fd8 ba02000000      mov     edx,2"><pre><code>mov     edx,2</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8fdd e88e078e5f      call    coreclr!coreclr_shutdown_2+0xddd0 (00007ff8`3c3c9770)"><pre><code>call    coreclr!coreclr_shutdown_2+0xddd0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8fe2 48b92073351408020000 mov rcx,20814357320h"><pre><code>mov     rcx,20814357320h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8fec 488b09          mov     rcx,qword ptr [rcx]"><pre><code>mov     rcx,qword ptr [rcx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8fef 4883c108        add     rcx,8"><pre><code>add     rcx,8</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8ff3 e86048ddff      call    00007ff7`dc8bd858"><pre><code>call    System.DateTime.ToString()</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.get_Condition()</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>        public bool Condition { get; set; }
+                                ^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8f98 488b4510        mov     rax,qword ptr [rbp+10h]"><pre><code>mov     rax,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcae8f9c 0fb64008        movzx   eax,byte ptr [rax+8]"><pre><code>movzx   eax,byte ptr [rax+8]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.DateTime.ToString()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff8`3b47c8c5 488b09          mov     rcx,qword ptr [rcx]"><pre><code>mov     rcx,qword ptr [rcx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b47c8c8 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b47c8ca 4533c0          xor     r8d,r8d"><pre><code>xor     r8d,r8d</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b47c8cd ff158d4bbcff    call    qword ptr [System_Private_CoreLib+0x11460 (00007ff8`3b041460)]"><pre><code>call    qword ptr [System_Private_CoreLib+0x11460</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><td colspan="2"><b>Method got most probably inlined</b></td></tr>
+<tr><td colspan="2">System.MulticastDelegate.ThrowNullThisInDelegateToInstance()</td></tr>
+<tr><td colspan="{2}"></td></tr>
+</tbody></table>
+<h2>.NET Core 3.0.0-rc1-19456-20 (CoreCLR 4.700.19.45506, CoreFX 4.700.19.45604), 64bit RyuJIT</h2>
+<table><tbody>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.TestParametersLazyLocalFunc()</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>            return TestParametersLazyLocalFuncSub(LocalFunc);
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8d88 48b910dbaadcf77f0000 mov rcx,7FF7DCAADB10h"><pre><code>mov     rcx,7FF7DCAADB10h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8d92 e8d9058f5f      call    coreclr!coreclr_shutdown_2+0xd9d0 (00007ff8`3c3c9370)"><pre><code>call    coreclr!coreclr_shutdown_2+0xd9d0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8d97 488945f8        mov     qword ptr [rbp-8],rax"><pre><code>mov     qword ptr [rbp-8],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8d9b 48b9d0c3a1dcf77f0000 mov rcx,7FF7DCA1C3D0h"><pre><code>mov     rcx,7FF7DCA1C3D0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8da5 ba03000000      mov     edx,3"><pre><code>mov     edx,3</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8daa e8c1098f5f      call    coreclr!coreclr_shutdown_2+0xddd0 (00007ff8`3c3c9770)"><pre><code>call    coreclr!coreclr_shutdown_2+0xddd0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8daf 48ba287357111c020000 mov rdx,21C11577328h"><pre><code>mov     rdx,21C11577328h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8db9 488b12          mov     rdx,qword ptr [rdx]"><pre><code>mov     rdx,qword ptr [rdx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8dbc 488955f0        mov     qword ptr [rbp-10h],rdx"><pre><code>mov     qword ptr [rbp-10h],rdx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8dc0 488b55f0        mov     rdx,qword ptr [rbp-10h]"><pre><code>mov     rdx,qword ptr [rbp-10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8dc4 49b8e080addcf77f0000 mov r8,7FF7DCAD80E0h"><pre><code>mov     r8,7FF7DCAD80E0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8dce 488b4df8        mov     rcx,qword ptr [rbp-8]"><pre><code>mov     rcx,qword ptr [rbp-8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8dd2 e871b1dbff      call    00007ff7`dc893f48"><pre><code>call    System.MulticastDelegate.CtorClosed(System.Object, IntPtr)</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8dd7 488b4d10        mov     rcx,qword ptr [rbp+10h]"><pre><code>mov     rcx,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ddb 488b55f8        mov     rdx,qword ptr [rbp-8]"><pre><code>mov     rdx,qword ptr [rbp-8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ddf e8944cddff      call    00007ff7`dc8ada78"><pre><code>call    Test.LazyParameters.Benchmark_LazyParameters.TestParametersLazyLocalFuncSub(System.Func`1<System.String>)</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.MulticastDelegate.CtorClosed(System.Object, IntPtr)</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff8`3b3d4aac 4885d2          test    rdx,rdx"><pre><code>test    rdx,rdx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4aaf 7415            je      System_Private_CoreLib+0x3a4ac6 (00007ff8`3b3d4ac6)"><pre><code>je      System_Private_CoreLib+0x3a4ac6</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ab1 488d4e08        lea     rcx,[rsi+8]"><pre><code>lea     rcx,[rsi+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ab5 ff156dc5c5ff    call    qword ptr [System_Private_CoreLib+0x1028 (00007ff8`3b031028)]"><pre><code>call    qword ptr [System_Private_CoreLib+0x1028</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4abb 48897e18        mov     qword ptr [rsi+18h],rdi"><pre><code>mov     qword ptr [rsi+18h],rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4abf 4883c428        add     rsp,28h"><pre><code>add     rsp,28h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac3 5e              pop     rsi"><pre><code>pop     rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac4 5f              pop     rdi"><pre><code>pop     rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac5 c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac6 488bce          mov     rcx,rsi"><pre><code>mov     rcx,rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ac9 ff1599a7c6ff    call    qword ptr [System_Private_CoreLib+0xf268 (00007ff8`3b03f268)]"><pre><code>call    qword ptr [System_Private_CoreLib+0xf268</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4acf cc              int     3"><pre><code>int     3</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad0 57              push    rdi"><pre><code>push    rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad1 56              push    rsi"><pre><code>push    rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad2 53              push    rbx"><pre><code>push    rbx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad3 4883ec30        sub     rsp,30h"><pre><code>sub     rsp,30h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ad7 488bf1          mov     rsi,rcx"><pre><code>mov     rsi,rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ada 488bfa          mov     rdi,rdx"><pre><code>mov     rdi,rdx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4add 498bd8          mov     rbx,r8"><pre><code>mov     rbx,r8</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ae0 488b5708        mov     rdx,qword ptr [rdi+8]"><pre><code>mov     rdx,qword ptr [rdi+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b3d4ae4 488d4e20        lea     rcx,[rsi+20h]"><pre><code>lea     rcx,[rsi+20h]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.TestParametersLazyLocalFuncSub(System.Func`1<System.String>)</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>            if (Condition)
+            ^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8eb8 488b4d10        mov     rcx,qword ptr [rbp+10h]"><pre><code>mov     rcx,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ebc e87f4bddff      call    00007ff7`dc8ada40"><pre><code>call    Test.LazyParameters.Benchmark_LazyParameters.get_Condition()</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ec1 85c0            test    eax,eax"><pre><code>test    eax,eax</pre></code></td>
+</tr><tr class="">
+<td></td><td id="27" class="reference" data-reference="27_M02_L00" title="00007ff7`dcad8ec3 741e            je      00007ff7`dcad8ee3"><a href="#27_M02_L00"><pre><code>je      M02_L00</pre></code></a></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return date();
+                ^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ec5 488b4d18        mov     rcx,qword ptr [rbp+18h]"><pre><code>mov     rcx,qword ptr [rbp+18h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ec9 48894df8        mov     qword ptr [rbp-8],rcx"><pre><code>mov     qword ptr [rbp-8],rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ecd 488b4df8        mov     rcx,qword ptr [rbp-8]"><pre><code>mov     rcx,qword ptr [rbp-8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ed1 488b4908        mov     rcx,qword ptr [rcx+8]"><pre><code>mov     rcx,qword ptr [rcx+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ed5 488b45f8        mov     rax,qword ptr [rbp-8]"><pre><code>mov     rax,qword ptr [rbp-8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ed9 ff5018          call    qword ptr [rax+18h]"><pre><code>call    qword ptr [rax+18h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8edc 90              nop"><pre><code>nop</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8edd 488d6500        lea     rsp,[rbp]"><pre><code>lea     rsp,[rbp]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ee1 5d              pop     rbp"><pre><code>pop     rbp</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8ee2 c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                return string.Empty;
+                ^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td id="27_M02_L00" class="label" data-label="27_M02_L00"><pre><code>M02_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ff7`dcad8ee3 48b8603057111c020000 mov rax,21C11573060h"><pre><code>mov     rax,21C11573060h</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ff7`dcad8eed 488b00          mov     rax,qword ptr [rax]"><pre><code>mov     rax,qword ptr [rax]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters+<>c.<TestParametersLazyLocalFunc>g__LocalFunc|9_0()</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>                return Date.ToString();
+                ^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8f4e 48b9d0c3a1dcf77f0000 mov rcx,7FF7DCA1C3D0h"><pre><code>mov     rcx,7FF7DCA1C3D0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8f58 ba02000000      mov     edx,2"><pre><code>mov     edx,2</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8f5d e80e088f5f      call    coreclr!coreclr_shutdown_2+0xddd0 (00007ff8`3c3c9770)"><pre><code>call    coreclr!coreclr_shutdown_2+0xddd0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8f62 48b9207357111c020000 mov rcx,21C11577320h"><pre><code>mov     rcx,21C11577320h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8f6c 488b09          mov     rcx,qword ptr [rcx]"><pre><code>mov     rcx,qword ptr [rcx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8f6f 4883c108        add     rcx,8"><pre><code>add     rcx,8</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8f73 e8e048ddff      call    00007ff7`dc8ad858"><pre><code>call    System.DateTime.ToString()</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">Test.LazyParameters.Benchmark_LazyParameters.get_Condition()</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>        public bool Condition { get; set; }
+                                ^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8f18 488b4510        mov     rax,qword ptr [rbp+10h]"><pre><code>mov     rax,qword ptr [rbp+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff7`dcad8f1c 0fb64008        movzx   eax,byte ptr [rax+8]"><pre><code>movzx   eax,byte ptr [rax+8]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.DateTime.ToString()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ff8`3b47c8c5 488b09          mov     rcx,qword ptr [rcx]"><pre><code>mov     rcx,qword ptr [rcx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b47c8c8 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b47c8ca 4533c0          xor     r8d,r8d"><pre><code>xor     r8d,r8d</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ff8`3b47c8cd ff158d4bbcff    call    qword ptr [System_Private_CoreLib+0x11460 (00007ff8`3b041460)]"><pre><code>call    qword ptr [System_Private_CoreLib+0x11460</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><td colspan="2"><b>Method got most probably inlined</b></td></tr>
+<tr><td colspan="2">System.MulticastDelegate.ThrowNullThisInDelegateToInstance()</td></tr>
+<tr><td colspan="{2}"></td></tr>
+</tbody></table>
+</body></html>

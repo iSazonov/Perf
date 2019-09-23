@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Test.LazyParameters.Benchmark_LazyParameters-20190923-100605</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.11.5, OS=Windows 10.0.17763.737 (1809/October2018Update/Redstone5)
+Intel Core i5-7400 CPU 3.00GHz (Kaby Lake), 1 CPU, 4 logical and 4 physical cores
+.NET Core SDK=3.0.100-rc1-014190
+  [Host]     : .NET Core 3.0.0-rc1-19456-20 (CoreCLR 4.700.19.45506, CoreFX 4.700.19.45604), 64bit RyuJIT
+  DefaultJob : .NET Core 3.0.0-rc1-19456-20 (CoreCLR 4.700.19.45506, CoreFX 4.700.19.45604), 64bit RyuJIT
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>               Method</th><th>Condition</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>TestParameters</td><td>False</td><td>307.496 ns</td><td>3.9617 ns</td><td>3.7058 ns</td><td>1.000</td><td>0.0200</td><td>-</td><td>-</td><td>64 B</td>
+</tr><tr><td>TestParametersLazyLambda</td><td>False</td><td>1.264 ns</td><td>0.0147 ns</td><td>0.0122 ns</td><td>0.004</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>TestParametersLazyLocalFunc</td><td>False</td><td>6.891 ns</td><td>0.0422 ns</td><td>0.0395 ns</td><td>0.022</td><td>0.0204</td><td>-</td><td>-</td><td>64 B</td>
+</tr><tr><td>TestParameters</td><td>True</td><td>306.528 ns</td><td>2.1895 ns</td><td>1.9409 ns</td><td>1.00</td><td>0.0200</td><td>-</td><td>-</td><td>64 B</td>
+</tr><tr><td>TestParametersLazyLambda</td><td>True</td><td>303.598 ns</td><td>1.7089 ns</td><td>1.5986 ns</td><td>0.99</td><td>0.0200</td><td>-</td><td>-</td><td>64 B</td>
+</tr><tr><td>TestParametersLazyLocalFunc</td><td>True</td><td>310.748 ns</td><td>0.4714 ns</td><td>0.3937 ns</td><td>1.01</td><td>0.0405</td><td>-</td><td>-</td><td>128 B</td>
+</tr></tbody></table>
+</body>
+</html>
