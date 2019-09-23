@@ -1,0 +1,3 @@
+C:\Users\sie\Documents\GitHub\iSazonov\test\StringFolding\obj\Release\netcoreapp3.0\SCF.Perf.StringFolding.Tests.csprojAssemblyReference.cache
+C:\Users\sie\Documents\GitHub\iSazonov\test\StringFolding\obj\Release\netcoreapp3.0\SCF.Perf.StringFolding.Tests.AssemblyInfoInputs.cache
+C:\Users\sie\Documents\GitHub\iSazonov\test\StringFolding\obj\Release\netcoreapp3.0\SCF.Perf.StringFolding.Tests.AssemblyInfo.cs
